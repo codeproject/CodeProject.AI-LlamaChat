@@ -1,0 +1,7 @@
+#! Python3.7
+
+huggingface_hub     # Installing the huggingface hub
+
+CodeProject-AI-SDK      # Installing the CodeProject.AI SDK
+
+# last line empty
