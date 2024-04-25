@@ -5,13 +5,9 @@
 import sys
 import time
 
-# Import the CodeProject.AI SDK. This will add to the PATH  for future imports
-sys.path.append("../../SDK/Python")
-from common import JSON
-from request_data import RequestData
-from module_runner import ModuleRunner
-from module_options import ModuleOptions
-from module_logging import LogMethod, LogVerbosity
+# Import CodeProject.AI SDK
+from codeproject_ai_sdk import RequestData, ModuleRunner, ModuleOptions, \
+                               LogMethod, LogVerbosity, JSON
 
 from llama_chat import LlamaChat
 

@@ -10,4 +10,6 @@ numpy>=1.20.0       # Installing NumPy, a package for scientific computing
 --prefer-binary
 llama-cpp-python    # Installing simple Python bindings for the llama.cpp library
 
+CodeProject-AI-SDK  # Installing the CodeProject.AI SDK
+
 # last line empty

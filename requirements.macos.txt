@@ -13,6 +13,8 @@ numpy>=1.20.0       # Installing NumPy, a package for scientific computing
 # get the wheel from the GitHub release page, not PyPI
 --only-binary
 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/metal/
-llama-cpp-python     # Installing simple Python bindings for the llama.cpp library
+llama-cpp-python    # Installing simple Python bindings for the llama.cpp library
+
+CodeProject-AI-SDK  # Installing the CodeProject.AI SDK
 
 # last line empty
