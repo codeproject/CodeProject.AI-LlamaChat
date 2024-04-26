@@ -10,7 +10,7 @@ numpy>=1.20.0       # Installing NumPy, a package for scientific computing
 # --prefer-binary
 # llama-cpp-python  # Installing simple Python bindings for the llama.cpp library
 
---only-binary
+--prefer-binary
 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu/
 llama-cpp-python    # Installing simple Python bindings for the llama.cpp library
 

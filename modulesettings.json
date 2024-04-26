@@ -21,7 +21,7 @@
       "LaunchSettings": {
         "AutoStart": false,
         "FilePath": "llama_chat_adapter.py",
-        "Runtime": "python3.8",
+        "Runtime": "python3.11",
         "RuntimeLocation": "Local",       // Can be Local, Shared or System
         "PostStartPauseSecs": 0,          // Generally 1 if using GPU, 0 for CPU
         "Queue": null,                    // Use default
