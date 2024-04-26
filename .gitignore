@@ -12,12 +12,8 @@ plate.png
 *-[0-9]*.[0-9]*.[0-9]*.zip
 
 # Models
-assets/
-
-# data
-datastore/
+models/
 
 # Python install / Virtual environment
 bin/
 
-/datastore
