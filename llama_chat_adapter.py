@@ -30,9 +30,14 @@ class LlamaChat_adapter(ModuleRunner):
         #  - on macOS, "Metal" is always used, meaning always GPU
         # There is support for ROCm for when we add the appropriate requirements files.
         self.inference_device = "CPU"
+        num_gpu_layers = -1
+        
         if self.system_info.os == "macOS":
-            self.inference_device  = "GPU"
-            self.inference_library = "Metal"
+            if self.system_info.cpu_arch == 'arm64':
+                self.inference_device  = "GPU"
+                self.inference_library = "Metal"
+            else:
+                num_gpu_layers = 0 # There's a bug at the moment on Intel macs
         else:
             (cuda_major, cuda_minor) = self.system_info.getCudaVersion
             if cuda_major and (cuda_major > 11 or (cuda_major == 11 and cuda_minor >= 6)):
@@ -44,7 +49,7 @@ class LlamaChat_adapter(ModuleRunner):
                                     fileglob=self.models_fileglob,
                                     filename=self.model_filename,
                                     model_dir=self.models_dir,
-                                    n_ctx=0,
+                                    n_ctx=0, n_gpu_layers=num_gpu_layers,
                                     verbose=verbose)
         
         if self.llama_chat.model_path:
