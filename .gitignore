@@ -1,7 +1,19 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
+﻿# Misc
+.DS_Store
 
-/bin/windows/python39/venv
-/models
-/__pycache__
+# Python cache
+__pycache__/
+*.pyc
+
+# debug debris
+plate.png
+
+# Generated package files
+*-[0-9]*.[0-9]*.[0-9]*.zip
+
+# Models
+models/
+
+# Python install / Virtual environment
+bin/
+
