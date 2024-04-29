@@ -23,7 +23,7 @@ if not exist "!moduleDirPath!/models/!fileToGet!" (
     if not exist "!downloadDirPath!\!modulesDir!\!moduleDirName!" mkdir "!downloadDirPath!\!modulesDir!\!moduleDirName!"
     if not exist "!moduleDirPath!\models" mkdir "!moduleDirPath!\models"
 
-    call "!sdkScriptsDirPath!\utils.bat" WriteLine "Downloading !fileToGet!" "!color_info!"
+    call "!utilsScript!" WriteLine "Downloading !fileToGet!" "!color_info!"
 
     powershell -command "Start-BitsTransfer -Source '!sourceUrl!!fileToGet!' -Destination '!destination!'"
     if errorlevel 1 (
@@ -33,19 +33,19 @@ if not exist "!moduleDirPath!/models/!fileToGet!" (
     if errorlevel 1 (
         powershell -Command "Invoke-WebRequest '!sourceUrl!!fileToGet!' -OutFile '!destination!'"
         if errorlevel 1 (
-            call "!sdkScriptsDirPath!\utils.bat" WriteLine "Download failed. Sorry." "!color_error!"
+            call "!utilsScript!" WriteLine "Download failed. Sorry." "!color_error!"
             set moduleInstallErrors=Unable to download !fileToGet!
         )
     )
 
     if exist "!destination!" (
-        call "!sdkScriptsDirPath!\utils.bat" WriteLine "Moving !fileToGet! into the models folder." "!color_info!"
+        call "!utilsScript!" WriteLine "Moving !fileToGet! into the models folder." "!color_info!"
         move "!destination!" "!moduleDirPath!/models/" > nul
     ) else (
-        call "!sdkScriptsDirPath!\utils.bat" WriteLine "Download faild. Sad face." "!color_warn!"
+        call "!utilsScript!" WriteLine "Download faild. Sad face." "!color_warn!"
     )
 ) else (
-    call "!sdkScriptsDirPath!\utils.bat" WriteLine "!fileToGet! already downloaded." "!color_success!"
+    call "!utilsScript!" WriteLine "!fileToGet! already downloaded." "!color_success!"
 )
 
 REM set moduleInstallErrors=
