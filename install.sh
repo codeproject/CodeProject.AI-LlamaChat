@@ -27,7 +27,7 @@ fi
 if [ "$module_install_errors" = "" ]; then
 
     # Disable this. req.txt should be good now
-    if [ "a" = "b" ] && [ "${os}" = "macos" ]; then # && [ "${architecture}" = "arm64" ]; then
+    if [ "${os}" = "macos" ] && [ "${architecture}" = "arm64" ]; then
 
         # Wouldn't it be nice if this just worked?
         # installPythonPackagesByName "llama-cpp-python" "Simple Python bindings for the llama.cpp library"
