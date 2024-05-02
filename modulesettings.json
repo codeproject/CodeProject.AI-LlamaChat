@@ -31,15 +31,24 @@
       "EnvironmentVariables": {
         "CPAI_LOG_VERBOSITY": "Quiet",
 
-        "CPAI_MODULE_LLAMA_MODEL_DIR":      "./models",
+        "CPAI_MODULE_LLAMA_MODEL_DIR": "./models",
         // "CPAI_MODULE_LLAMA_MODEL_REPO":  "@TheBloke/Llama-2-7B-Chat-GGUF",
 
         // For loading via llama-cpp.from_pretrained
-        "CPAI_MODULE_LLAMA_MODEL_REPO":     "@TheBloke/Mistral-7B-Instruct-v0.2-GGUF",
+
+        // ------- Mistral-7B-Instruct-v0.2-GGUF ---------------
+        "CPAI_MODULE_LLAMA_MODEL_REPO": "@TheBloke/Mistral-7B-Instruct-v0.2-GGUF",
         "CPAI_MODULE_LLAMA_MODEL_FILEGLOB": "*.Q4_K_M.gguf",
 
         // fallback loading via Llama()
-        "CPAI_MODULE_LLAMA_MODEL_FILENAME": "mistral-7b-instruct-v0.2.Q4_K_M.gguf"
+        "CPAI_MODULE_LLAMA_MODEL_FILENAME": "mistral-7b-instruct-v0.2.Q4_K_M.gguf",
+
+        //------- Phi-3-mini-4k-instruct-gguf ---------------
+        //"CPAI_MODULE_LLAMA_MODEL_REPO": "@microsoft/Phi-3-mini-4k-instruct-gguf",
+        //"CPAI_MODULE_LLAMA_MODEL_FILEGLOB": "Phi-3-mini-4k-instruct-q4.gguf",
+
+        // fallback loading via Llama()
+        //"CPAI_MODULE_LLAMA_MODEL_FILENAME": "Phi-3-mini-4k-instruct-q4.gguf"
       },
 
       "GpuOptions" : {
