@@ -9,11 +9,10 @@ numpy>=1.20.0       # Installing NumPy, a package for scientific computing
 # extra index could be: /basic, /AVX, /AVX2, or /AVX512
 # --prefer-binary
 # --extra-index-url https://jllllll.github.io/llama-cpp-python-cuBLAS-wheels/basic/cpu/
-# llama-cpp-python  # Installing simple Python bindings for the llama.cpp library
 
-# get the wheel from the GitHub release page, not PyPI
 # "unsupported op" on Intel macOS 11.0 on both metal and cpu
 # --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/metal/
+
 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu/
 --prefer-binary
 llama-cpp-python    # Installing simple Python bindings for the llama.cpp library
