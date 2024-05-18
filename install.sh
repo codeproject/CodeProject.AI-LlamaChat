@@ -26,7 +26,6 @@ fi
 
 if [ "$module_install_errors" = "" ]; then
 
-    # Disable this. req.txt should be good now
     if [ "${os}" = "macos" ] && [ "${architecture}" = "arm64" ]; then
 
         # Wouldn't it be nice if this just worked?
@@ -47,12 +46,20 @@ if [ "$module_install_errors" = "" ]; then
         # metal to get this overly pedantic codee to build. macOS just gets no love.
 
         if [ "${architecture}" = "arm64" ]; then
-            # CMAKE_ARGS="-DLLAMA_METAL=on" FORCE_CMAKE=1 "${venvPythonCmdPath}" -m pip install -U git+https://github.com/abetlen/llama-cpp-python.git --no-cache-dir
-            CMAKE_ARGS="-DLLAMA_METAL=off -DLLAMA_CLBLAST=on" FORCE_CMAKE=1 "${venvPythonCmdPath}" -m pip install llama-cpp-python
+            if [ "$verbosity" = "loud" ]; then
+                # CMAKE_ARGS="-DLLAMA_METAL=on" FORCE_CMAKE=1 "${venvPythonCmdPath}" -m pip install -U git+https://github.com/abetlen/llama-cpp-python.git --no-cache-dir
+                CMAKE_ARGS="-DLLAMA_METAL=off -DLLAMA_CLBLAST=on" FORCE_CMAKE=1 "${venvPythonCmdPath}" -m pip install llama-cpp-python
+            else
+                CMAKE_ARGS="-DLLAMA_METAL=off -DLLAMA_CLBLAST=on" FORCE_CMAKE=1 "${venvPythonCmdPath}" -m pip install llama-cpp-python > /dev/null
+            fi
         else
-            # "${venvPythonCmdPath}" -m pip install llama-cpp-python
-            # CMAKE_ARGS="-DLLAMA_METAL=off -DLLAMA_CLBLAS=on" FORCE_CMAKE=1 "${venvPythonCmdPath}" -m pip install llama-cpp-python
-            CMAKE_ARGS="-DLLAMA_METAL=off" FORCE_CMAKE=1 "${venvPythonCmdPath}" -m pip install llama-cpp-python
+            if [ "$verbosity" = "loud" ]; then
+                # "${venvPythonCmdPath}" -m pip install llama-cpp-python
+                # CMAKE_ARGS="-DLLAMA_METAL=off -DLLAMA_CLBLAS=on" FORCE_CMAKE=1 "${venvPythonCmdPath}" -m pip install llama-cpp-python
+                CMAKE_ARGS="-DLLAMA_METAL=off" FORCE_CMAKE=1 "${venvPythonCmdPath}" -m pip install llama-cpp-python
+            else
+                CMAKE_ARGS="-DLLAMA_METAL=off" FORCE_CMAKE=1 "${venvPythonCmdPath}" -m pip install llama-cpp-python > /dev/null
+            fi
         fi
 
         popd >/dev/null
