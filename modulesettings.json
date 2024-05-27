@@ -76,7 +76,8 @@
           { "ModuleVersion": "1.4.1", "ServerVersionRange": [ "2.6.1", ""      ], "ReleaseDate": "2024-04-01", "ReleaseNotes": "Minor corrections" },
           { "ModuleVersion": "1.4.2", "ServerVersionRange": [ "2.6.1", ""      ], "ReleaseDate": "2024-04-19", "ReleaseNotes": "Corrected detection of GPU usage." },
           { "ModuleVersion": "1.4.3", "ServerVersionRange": [ "2.6.1", ""      ], "ReleaseDate": "2024-04-25", "ReleaseNotes": "Microsoft Phi-3 and macOS Support." },
-          { "ModuleVersion": "1.5.0", "ServerVersionRange": [ "2.7.0", ""      ], "ReleaseDate": "2024-04-25", "ReleaseNotes": "Updated for CodeProject.AI Server 2.7." },
+          { "ModuleVersion": "1.4.4", "ServerVersionRange": [ "2.6.1", ""      ], "ReleaseDate": "2024-05-27", "ReleaseNotes": "Corrections to requirements files." },
+          { "ModuleVersion": "1.5.0", "ServerVersionRange": [ "2.7.0", ""      ], "ReleaseDate": "2024-04-25", "ReleaseNotes": "Updated for CodeProject.AI Server 2.7." }
         ]
       },
 
