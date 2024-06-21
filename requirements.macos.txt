@@ -1,9 +1,9 @@
 #! Python3.7
 
-huggingface_hub     # Installing the huggingface hub
+huggingface_hub                 # Installing the huggingface hub
 
-diskcache>=5.6.1    # Installing disckcache for Disk and file backed persistent cache
-numpy>=1.20.0       # Installing NumPy, a package for scientific computing
+diskcache>=5.6.1                # Installing disckcache for Disk and file backed persistent cache
+numpy>=1.20.0,<2.0              # Installing NumPy, a package for scientific computing
 
 # "69008 Floating point exception: 8" on Intel macOS 11
 # extra index could be: /basic, /AVX, /AVX2, or /AVX512
@@ -15,8 +15,8 @@ numpy>=1.20.0       # Installing NumPy, a package for scientific computing
 
 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu/
 --prefer-binary
-llama-cpp-python    # Installing simple Python bindings for the llama.cpp library
+llama-cpp-python                # Installing simple Python bindings for the llama.cpp library
 
-CodeProject-AI-SDK  # Installing the CodeProject.AI SDK
+CodeProject-AI-SDK              # Installing the CodeProject.AI SDK
 
 # last line empty
