@@ -65,11 +65,19 @@ if [ "$module_install_errors" = "" ]; then
         popd >/dev/null
     fi
 
+    HF_HUB_DISABLE_SYMLINKS_WARNING=1
+
+    # codellama
     # sourceUrl="https://huggingface.co/TheBloke/CodeLlama-7B-GGUF/resolve/main/"
     # fileToGet="codellama-7b.Q4_K_M.gguf"
-    
-    sourceUrl="https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/resolve/main/"
-    fileToGet=mistral-7b-instruct-v0.2.Q4_K_M.gguf
+      
+    # Mistral
+    # sourceUrl="https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/resolve/main/"
+    # fileToGet=mistral-7b-instruct-v0.2.Q4_K_M.gguf
+
+    # Phi-3
+    sourceUrl="https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-gguf/resolve/main/"
+    fileToGet="Phi-3-mini-4k-instruct-q4.gguf"
 
     if [ "$verbosity" = "loud" ]; then writeLine "Looking for model: ${moduleDirPath}/models/${fileToGet}"; fi
 

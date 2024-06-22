@@ -13,9 +13,18 @@
     @goto:eof
 )
 
+set HF_HUB_DISABLE_SYMLINKS_WARNING=1
+
+
 REM Download the model file at installation so we can run without a connection to the Internet.
-set sourceUrl=https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/resolve/main/
-set fileToGet=mistral-7b-instruct-v0.2.Q4_K_M.gguf
+
+REM Mistral
+REM set fileToGet=mistral-7b-instruct-v0.2.Q4_K_M.gguf
+REM set sourceUrl=https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/resolve/main/
+
+REM Phi-3
+set sourceUrl=https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-gguf/resolve/main/
+set fileToGet=Phi-3-mini-4k-instruct-q4.gguf
 
 if not exist "!moduleDirPath!/models/!fileToGet!" (
     set destination=!downloadDirPath!\!modulesDir!\!moduleDirName!\!fileToGet!

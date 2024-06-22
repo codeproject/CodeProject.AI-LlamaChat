@@ -16,14 +16,24 @@ class LlamaChat_adapter(ModuleRunner):
     def initialise(self) -> None:
 
         self.models_dir      = ModuleOptions.getEnvVariable("CPAI_MODULE_LLAMA_MODEL_DIR",      "./models")
-        
+
+        """ Mistral        
         # For loading model downloaded at install time
         self.model_filename  = ModuleOptions.getEnvVariable("CPAI_MODULE_LLAMA_MODEL_FILENAME", "mistral-7b-instruct-v0.2.Q4_K_M.gguf")
 
         # fallback loading (at runtime, needs internet) via llama-cpp.from_pretrained
         self.model_repo      = ModuleOptions.getEnvVariable("CPAI_MODULE_LLAMA_MODEL_REPO",     "TheBloke/Llama-2-7B-Chat-GGUF")
         self.models_fileglob = ModuleOptions.getEnvVariable("CPAI_MODULE_LLAMA_MODEL_FILEGLOB", "*.Q4_K_M.gguf")
-        
+        """
+
+        # Microsoft Phi-3
+        # For loading model downloaded at install time
+        self.model_filename  = ModuleOptions.getEnvVariable("CPAI_MODULE_LLAMA_MODEL_FILENAME", "Phi-3-mini-4k-instruct-q4.gguf")
+
+        # fallback loading (at runtime, needs internet) via llama-cpp.from_pretrained
+        self.model_repo      = ModuleOptions.getEnvVariable("CPAI_MODULE_LLAMA_MODEL_REPO",     "microsoft/Phi-3-mini-4k-instruct-gguf")
+        self.models_fileglob = ModuleOptions.getEnvVariable("CPAI_MODULE_LLAMA_MODEL_FILEGLOB", "Phi-3-mini-4k-instruct-q4.gguf")
+
         # llama-cpp-python packages that we are using will use GPU when it can.
         # But Llama doesn't report this, so we have to make our best guess:
         #  - on Windows and Linux, it will use CUDA 11.6+ if possible, else CPU
