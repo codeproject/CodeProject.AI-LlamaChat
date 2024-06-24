@@ -78,7 +78,7 @@
           { "ModuleVersion": "1.4.3", "ServerVersionRange": [ "2.6.1",     ""  ], "ReleaseDate": "2024-04-25", "ReleaseNotes": "Microsoft Phi-3 and macOS Support." },
           { "ModuleVersion": "1.4.4", "ServerVersionRange": [ "2.6.1",     ""  ], "ReleaseDate": "2024-05-27", "ReleaseNotes": "Corrections to requirements files." },
           { "ModuleVersion": "1.5.0", "ServerVersionRange": [ "2.6.5",     ""  ], "ReleaseDate": "2024-04-25", "ReleaseNotes": "Updated for CodeProject.AI Server 2.6.5" },
-          { "ModuleVersion": "1.5.1", "ServerVersionRange": [ "2.6.5",     ""  ], "ReleaseDate": "2024-06-21", "ReleaseNotes": "Switched to Microsoft Phi-3, corrections for numpy install issue" }
+          { "ModuleVersion": "1.5.1", "ServerVersionRange": [ "2.6.5",     ""  ], "ReleaseDate": "2024-06-21", "ReleaseNotes": "Switched to Microsoft Phi-3, Corrected Numpy 2.0 issue" }
         ]
       },
 

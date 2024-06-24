@@ -13,8 +13,10 @@
     @goto:eof
 )
 
-set HF_HUB_DISABLE_SYMLINKS_WARNING=1
+REM Backwards compatibility with Server 2.6.5
+if "!utilsScript!" == "" if "!sdkScriptsDirPath!" NEQ "" set utilsScript=%sdkScriptsDirPath%\utils.bat
 
+set HF_HUB_DISABLE_SYMLINKS_WARNING=1
 
 REM Download the model file at installation so we can run without a connection to the Internet.
 
