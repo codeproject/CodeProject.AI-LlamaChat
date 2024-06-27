@@ -95,7 +95,7 @@ if [ "$module_install_errors" = "" ]; then
         fi
 
         if [ -f "${cacheDirPath}" ]; then 
-            cp "${cacheDirPath}" "${moduleDirPath}/models/."
+            cp "${cacheDirPath}" "${moduleDirPath}/models/"
         fi
 
     else

@@ -3,7 +3,7 @@
 
     "LlamaChat": {
       "Name": "LlamaChat",
-      "Version": "1.5.1",
+      "Version": "1.5.2",
 
       "PublishingInfo" : {
         "Description": "A Large Language Model based on the Machine Learning Compilation for LLMs",
@@ -33,17 +33,15 @@
 
         "CPAI_MODULE_LLAMA_MODEL_DIR":      "./models",
 
-        /*
         // ------- Mistral-7B-Instruct-v0.2-GGUF ---------------
         // For loading model downloaded at install time
-        "CPAI_MODULE_LLAMA_MODEL_FILENAME": "mistral-7b-instruct-v0.2.Q4_K_M.gguf",
+        // "CPAI_MODULE_LLAMA_MODEL_FILENAME": "mistral-7b-instruct-v0.2.Q4_K_M.gguf",
 
         // fallback loading (at runtime, needs internet) via llama-cpp.from_pretrained
-        "CPAI_MODULE_LLAMA_MODEL_REPO":     "@TheBloke/Mistral-7B-Instruct-v0.2-GGUF",
-        "CPAI_MODULE_LLAMA_MODEL_FILEGLOB": "*.Q4_K_M.gguf"
-        */
+        // "CPAI_MODULE_LLAMA_MODEL_REPO":     "@TheBloke/Mistral-7B-Instruct-v0.2-GGUF",
+        // "CPAI_MODULE_LLAMA_MODEL_FILEGLOB": "*.Q4_K_M.gguf"
 
-        //------- Phi-3-mini-4k-instruct-gguf ---------------
+        // ------- Phi-3-mini-4k-instruct-gguf ---------------
         // For loading model downloaded at install time
         "CPAI_MODULE_LLAMA_MODEL_FILENAME": "Phi-3-mini-4k-instruct-q4.gguf",
 
@@ -78,7 +76,8 @@
           { "ModuleVersion": "1.4.3", "ServerVersionRange": [ "2.6.1",     ""  ], "ReleaseDate": "2024-04-25", "ReleaseNotes": "Microsoft Phi-3 and macOS Support." },
           { "ModuleVersion": "1.4.4", "ServerVersionRange": [ "2.6.1",     ""  ], "ReleaseDate": "2024-05-27", "ReleaseNotes": "Corrections to requirements files." },
           { "ModuleVersion": "1.5.0", "ServerVersionRange": [ "2.6.5",     ""  ], "ReleaseDate": "2024-04-25", "ReleaseNotes": "Updated for CodeProject.AI Server 2.6.5" },
-          { "ModuleVersion": "1.5.1", "ServerVersionRange": [ "2.6.5",     ""  ], "ReleaseDate": "2024-06-21", "ReleaseNotes": "Switched to Microsoft Phi-3, Corrected Numpy 2.0 issue" }
+          { "ModuleVersion": "1.5.1", "ServerVersionRange": [ "2.6.5",     ""  ], "ReleaseDate": "2024-06-21", "ReleaseNotes": "Switched to Microsoft Phi-3, Corrected Numpy 2.0 issue" },
+          { "ModuleVersion": "1.5.2", "ServerVersionRange": [ "2.6.5",     ""  ], "ReleaseDate": "2024-06-26", "ReleaseNotes": "Further work on the Numpy 2.0 issue" }
         ]
       },
 
