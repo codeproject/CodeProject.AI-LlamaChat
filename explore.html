@@ -103,14 +103,23 @@ RULES AND CONVENTIONS
                               placeholder="Ask a question"></textarea>
                     <input class="btn btn-info btn-sm " id="_MID_queryBtn"
                            type="button" value="Send" style="height:2rem;width:4rem"
-                           onclick="_MID_onLlamaChat(_MID_promptText.value, _MID_maxTokens.value, _MID_temperature.value)">
+                           onclick="_MID_onLlamaChat(_MID_promptText.value, _MID_systemPrompt.value, _MID_maxTokens.value, _MID_temperature.value)">
                     <input class="btn btn-warning btn-sm " type="button" value="Stop" id="_MID_stopBtn"
                            onclick="_MID_onLlamaStop()" style="display: none;height:2rem;width:4rem" />
                 </div>
             </div>
+
             <div class="mt-2">
-                <div id="_MID_answerText" style="resize:vertical;height: 10rem;white-space: pre-wrap;" class="overflow-auto bg-white text-dark w-100"><div class='text-muted'>Answer will appear here...</div>
+                <div id="_MID_answerText" style="resize:vertical;height: 10rem;white-space: pre-wrap;"
+                     class="overflow-auto bg-white text-dark w-100">
+                    <div class='text-muted'>Answer will appear here...</div>
                 </div>
+            </div>
+            <div class="form-group row mt-1">
+                <label class="col-3 col-form-label text-end">System Prompt</label>
+                <input class="form-control"  id="_MID_systemPrompt" type="text"
+                       value="You're a helpful assistant who answers questions the user asks of you concisely and accurately"
+                       style="width:100%" />
             </div>
             <div class="form-group row mt-1">
                 <label class="col-3 col-form-label text-end">Max tokens</label>
@@ -146,7 +155,7 @@ RULES AND CONVENTIONS
             let chat           = '';
             let commandId      = '';
 
-            async function _MID_onLlamaChat(prompt, maxTokens, temperature) {
+            async function _MID_onLlamaChat(prompt, systemPrompt, maxTokens, temperature) {
                 // show the stop button and hide the query button
                _MID_queryBtn.style.display = "none";
                _MID_stopBtn.style.display  = "inline";
@@ -158,9 +167,10 @@ RULES AND CONVENTIONS
                 }
 
                 let params = [
-                    ['prompt',      prompt],
-                    ['max_tokens',  maxTokens],
-                    ['temperature', temperature]
+                    ['prompt',        prompt],
+                    ['system_prompt', systemPrompt],
+                    ['max_tokens',    maxTokens],
+                    ['temperature',   temperature]
                 ];
 
                 setResultsHtml("Sending prompt...");

@@ -85,14 +85,16 @@ class LlamaChat_adapter(ModuleRunner):
         stop_reason = None
 
         prompt: str        = data.get_value("prompt")
+        system_prompt: str = data.get_value("system_prompt")
         max_tokens: int    = data.get_int("max_tokens", 0) #0 means model default
         temperature: float = data.get_float("temperature", 0.4)
 
         try:
             start_time = time.perf_counter()
 
-            completion = self.llama_chat.do_chat(prompt=prompt, max_tokens=max_tokens,
-                                                 temperature=temperature, stream=True)
+            completion = self.llama_chat.do_chat(prompt=prompt, system_prompt=system_prompt,
+                                                 max_tokens=max_tokens, temperature=temperature,
+                                                 stream=True)
             if completion:
                 try:
                     for output in completion:

@@ -116,10 +116,12 @@ class LlamaChat:
         if not system_prompt:
             system_prompt = "You're a helpful assistant who answers questions the user asks of you concisely and accurately."
 
+        assistant_role = "assistant" # "system"
+        user_role      = "user"
         completion = self.llm.create_chat_completion(
                         messages=[
-                            ChatCompletionRequestSystemMessage(role="system", content=system_prompt),
-                            ChatCompletionRequestUserMessage(role="user", content=prompt),
+                            ChatCompletionRequestSystemMessage(role=assistant_role, content=system_prompt),
+                            ChatCompletionRequestUserMessage(role=user_role, content=prompt),
                         ],
                         **kwargs) if self.llm else None
 
