@@ -21,10 +21,10 @@ fi
 
 if [ "${edgeDevice}" = "Raspberry Pi" ] || [ "${edgeDevice}" = "Orange Pi" ] || 
    [ "${edgeDevice}" = "Radxa ROCK" ]   || [ "${edgeDevice}" = "Jetson" ]; then
-    module_install_errors="Unable to install on Pi, ROCK or Jetson hardware."
+    moduleInstallErrors="Unable to install on Pi, ROCK or Jetson hardware."
 fi
 
-if [ "$module_install_errors" = "" ]; then
+if [ "$moduleInstallErrors" = "" ]; then
 
     if [ "${os}" = "macos" ] && [ "${architecture}" = "arm64" ]; then
 
