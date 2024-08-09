@@ -95,6 +95,7 @@ if [ "$moduleInstallErrors" = "" ]; then
         fi
 
         if [ -f "${cacheDirPath}" ]; then 
+            mkdir -p "${moduleDirPath}/models"
             cp "${cacheDirPath}" "${moduleDirPath}/models/"
         fi
 
