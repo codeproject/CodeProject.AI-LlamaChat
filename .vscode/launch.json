@@ -30,7 +30,7 @@
                 "python": "${workspaceFolder}/bin/windows/python311/venv/Scripts/python.exe"
             },
             "linux": {
-                "python": "${workspaceFolder}/bin/linux/python311/venv/bin/python",
+                "python": "${workspaceFolder}/bin/linux/python310/venv/bin/python",
             },
             "osx": {
                 "python": "${workspaceFolder}/bin/macos/python310/venv/bin/python",

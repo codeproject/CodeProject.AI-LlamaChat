@@ -26,6 +26,49 @@ fi
 
 if [ "$moduleInstallErrors" = "" ]; then
 
+    # https://stackoverflow.com/a/66377202
+    if [ "${os}" = "linux" ]; then
+
+        if [ ! -f /usr/lib/libc.musl-x86_64.so.1 ]; then
+
+            if [ ! -d /usr/local/musl/lib/ ]; then
+                if [ ! -f musl-1.2.2.tar.gz ]; then
+                    write "Downloading libc musl..." "$color_info"
+                    curl https://musl.libc.org/releases/musl-1.2.2.tar.gz -o musl-1.2.2.tar.gz
+                    writeLine "Done." "$color_success"
+                fi
+                if [ ! -d musl-1.2.2 ]; then
+                    write "Extracting musl..." "$color_info"
+                    tar -xvf musl-1.2.2.tar.gz
+                    writeLine "Done." "$color_success"
+                fi
+
+                cd musl-1.2.2
+                if [ "$verbosity" = "quiet" ]; then
+                    ./configure > /dev/null
+                    make  > /dev/null
+                    sudo make install  > /dev/null
+                else
+                    write "Configuring..." "$color_info"
+                    ./configure > /dev/null
+                    write "building..." "$color_info"
+                    make > /dev/null
+                    write "Installing..." "$color_info"
+                    sudo make install
+                    writeLine "Done." "$color_success"
+                fi
+                cd ..
+
+                write "Cleanup..." "$color_info"
+                rm -rf musl-1.2.2
+                rm musl-1.2.2.tar.gz
+                writeLine "Done." "$color_success"
+            fi 
+
+            sudo ln -s /usr/local/musl/lib/libc.so /usr/lib/libc.musl-x86_64.so.1
+        fi
+    fi
+
     if [ "${os}" = "macos" ] && [ "${architecture}" = "arm64" ]; then
 
         # Wouldn't it be nice if this just worked?

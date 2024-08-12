@@ -3,7 +3,7 @@
 
     "LlamaChat": {
       "Name": "LlamaChat",
-      "Version": "1.7.0",
+      "Version": "1.7.1",
 
       "PublishingInfo" : {
         "Description": "A Large Language Model based on the Machine Learning Compilation for LLMs",
@@ -79,7 +79,8 @@
           { "ModuleVersion": "1.5.1", "ServerVersionRange": [ "2.6.5", "2.7.0" ], "ReleaseDate": "2024-06-21", "ReleaseNotes": "Switched to Microsoft Phi-3, Corrected Numpy 2.0 issue" },
           { "ModuleVersion": "1.5.2", "ServerVersionRange": [ "2.6.5", "2.7.0" ], "ReleaseDate": "2024-06-26", "ReleaseNotes": "Further work on the Numpy 2.0 issue" },
           { "ModuleVersion": "1.6.0", "ServerVersionRange": [ "2.6.5", "2.7.0" ], "ReleaseDate": "2024-07-02", "ReleaseNotes": "Added option to modify system prompt" },
-          { "ModuleVersion": "1.7.0", "ServerVersionRange": [ "2.8.0", ""      ], "ReleaseDate": "2024-08-02", "ReleaseNotes": "Updated for server 2.8" }
+          { "ModuleVersion": "1.7.0", "ServerVersionRange": [ "2.8.0", ""      ], "ReleaseDate": "2024-08-02", "ReleaseNotes": "Updated for server 2.8" },
+          { "ModuleVersion": "1.7.1", "ServerVersionRange": [ "2.8.0", ""      ], "ReleaseDate": "2024-08-12", "ReleaseNotes": "Corrections to installer for Ubuntu" }
         ]
       },
 

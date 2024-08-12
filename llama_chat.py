@@ -24,7 +24,7 @@ class LlamaChat:
                              n_ctx=n_ctx,
                              n_gpu_layers=n_gpu_layers,
                              verbose=verbose)
-        except:
+        except Exception as ex:
             try:
                 # This will download the model from the repo and cache it locally
                 # Handy if we didn't download during install
@@ -40,7 +40,7 @@ class LlamaChat:
                 # get the relative path to the model file from the model itself
                 self.model_path = os.path.relpath(self.llm.model_path)
 
-            except:
+            except Exception as ex2:
                 self.llm        = None
                 self.model_path = None
 
