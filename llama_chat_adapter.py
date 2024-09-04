@@ -104,7 +104,7 @@ class LlamaChat_adapter(ModuleRunner):
                             break
 
                         # Using the raw result from the llama_chat module. In
-                        # building modules we don't try adn rewrite the code we
+                        # building modules we don't try to rewrite the code we
                         # are wrapping. Rather, we wrap the code so we can take
                         # advantage of updates to the original code more easily
                         # rather than having to re-apply fixes.
