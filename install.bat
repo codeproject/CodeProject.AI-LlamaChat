@@ -54,7 +54,7 @@ if not exist "!moduleDirPath!/models/!fileToGet!" (
         call "!utilsScript!" WriteLine "Moving !fileToGet! into the models folder." "!color_info!"
         move "!destination!" "!moduleDirPath!/models/" > nul
     ) else (
-        call "!utilsScript!" WriteLine "Download faild. Sad face." "!color_warn!"
+        call "!utilsScript!" WriteLine "Download failed. Sad face." "!color_warn!"
     )
 ) else (
     call "!utilsScript!" WriteLine "!fileToGet! already downloaded." "!color_success!"

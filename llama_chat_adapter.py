@@ -56,7 +56,7 @@ class LlamaChat_adapter(ModuleRunner):
                           
         verbose = self.log_verbosity != LogVerbosity.Quiet
         self.llama_chat = LlamaChat(repo_id=self.model_repo,
-                                    fileglob=self.models_fileglob,
+                                    file_glob=self.models_fileglob,
                                     filename=self.model_filename,
                                     model_dir=self.models_dir,
                                     n_ctx=0, n_gpu_layers=num_gpu_layers,

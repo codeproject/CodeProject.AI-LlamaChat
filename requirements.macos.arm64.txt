@@ -2,7 +2,7 @@
 
 huggingface_hub                 # Installing the huggingface hub
 
-diskcache>=5.6.1                # Installing disckcache for Disk and file backed persistent cache
+diskcache>=5.6.1                # Installing diskcache for Disk and file backed persistent cache
 numpy>=1.20.0,<2.0              # Installing NumPy, a package for scientific computing
 
 # "Illegal instruction: 4" on M1 mac

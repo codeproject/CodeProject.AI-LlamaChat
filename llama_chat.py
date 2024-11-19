@@ -14,7 +14,7 @@ from llama_cpp import ChatCompletionRequestSystemMessage, \
 
 class LlamaChat:
 
-    def __init__(self, repo_id: str, fileglob:str, filename:str, model_dir:str, 
+    def __init__(self, repo_id: str, file_glob:str, filename:str, model_dir:str, 
                  n_ctx: int = 0, n_gpu_layers = -1, verbose: bool = True) -> None:
 
         try:
@@ -28,9 +28,9 @@ class LlamaChat:
             try:
                 # This will download the model from the repo and cache it locally
                 # Handy if we didn't download during install
-                self.model_path = os.path.join(model_dir, fileglob)
+                self.model_path = os.path.join(model_dir, file_glob)
                 self.llm        = Llama.from_pretrained(repo_id=repo_id,
-                                                        filename=fileglob,
+                                                        filename=file_glob,
                                                         n_ctx=n_ctx,
                                                         n_gpu_layers=n_gpu_layers,
                                                         verbose=verbose,
