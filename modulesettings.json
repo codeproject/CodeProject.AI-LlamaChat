@@ -13,7 +13,7 @@
         "License": "MIT",
         "LicenseUrl": "https://github.com/abetlen/llama-cpp-python/blob/main/LICENSE.md",
         "Author": "Chris Maunder",
-        "Homepage": "https://https://github.com/codeproject/CodeProject.AI-Server/",
+        "Homepage": "https://github.com/codeproject/CodeProject.AI-Server/",
         "BasedOn": "llama-cpp-python",
         "BasedOnUrl": "https://github.com/abetlen/llama-cpp-python"
       },
