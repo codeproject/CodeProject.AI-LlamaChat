@@ -24,13 +24,49 @@
                 "MODELS_FOLDER": "${workspaceFolder}/models"
             },
 
-            "python": "${workspaceFolder}\\bin\\windows\\python311\\venv\\Scripts\\python.exe",
+            "python": "${workspaceFolder}/bin/windows/python311/venv/Scripts/python.exe",
             "windows": {
                 "python": "${workspaceFolder}/bin/windows/python311/venv/Scripts/python.exe"
             },
             "linux": {
-                // "python": "${workspaceFolder}/../../CodeProject.AI-Server/runtimes/bin/ubuntu/python310/venv/bin/python",
-                "python": "${workspaceFolder}/../../CodeProject.AI-Server/runtimes/bin/debian/python310/venv/bin/python",
+                // "python": "${workspaceFolder}/bin/ubuntu/python310/venv/bin/python",
+                "python": "${workspaceFolder}/bin/debian/python310/venv/bin/python",
+            },
+            "osx": {
+                "python": "${workspaceFolder}/bin/macos/python310/venv/bin/python",
+            }
+        },
+
+        {
+            "presentation": {
+                "group": "Start",
+                "hidden": false
+            },
+
+            "name": "Test Llama Chat",
+            "type": "debugpy",
+            "justMyCode": false,
+            "request": "launch",
+            "program": "llama_chat_adapter.py",
+            "args": [ "--selftest" ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+
+            "env": {
+                "RUNNING_IN_VSCODE": "True",
+                // "CPAI_LOG_VERBOSITY": "Loud",
+                "CPAI_PORT": "32168",
+
+                "MODELS_FOLDER": "${workspaceFolder}/models"
+            },
+
+            "python": "${workspaceFolder}/bin/windows/python311/venv/Scripts/python.exe",
+            "windows": {
+                "python": "${workspaceFolder}/bin/windows/python311/venv/Scripts/python.exe"
+            },
+            "linux": {
+                // "python": "${workspaceFolder}/bin/ubuntu/python310/venv/bin/python",
+                "python": "${workspaceFolder}/bin/debian/python310/venv/bin/python",
             },
             "osx": {
                 "python": "${workspaceFolder}/bin/macos/python310/venv/bin/python",
