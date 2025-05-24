@@ -126,7 +126,7 @@ if [ "$moduleInstallErrors" = "" ]; then
 
     if [ ! -f "${moduleDirPath}/models/${fileToGet}" ]; then
         
-        cacheDirPath="${downloadDirPath}/${modulesDir}/${moduleDirName}/${fileToGet}"
+        cacheDirPath="${downloadDirPath}/${modulesDir}/${assetsDir}/${moduleDirName}/${fileToGet}"
         
         if [ "$verbosity" = "loud" ]; then writeLine  "Looking for cache: ${cacheDirPath}"; fi
         if [ ! -f "${cacheDirPath}" ]; then
